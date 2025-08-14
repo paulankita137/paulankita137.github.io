@@ -2,107 +2,185 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Research Interests</title>
+    <title>Research – Ankita Paul</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- link to main stylesheet -->
+    <!-- Your main stylesheet -->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <style>
-      /* Optional light styling in case /css/main.css is minimal */
-      :root {
-        --ink: #0f172a;
-        --muted: #475569;
-        --link: #0ea5e9;
-        --bg: #ffffff;
-        --card: #f8fafc;
-      }
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; }
-      nav { border-bottom: 1px solid #e2e8f0; background: #fff; position: sticky; top: 0; z-index: 10; }
-      nav .inner { max-width: 960px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-      nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
-      nav a:hover { color: var(--link); }
-      .container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-      .blurb { background: var(--card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.25rem; }
-      h1, h2 { line-height: 1.2; margin: 0.2rem 0 0.75rem; }
+      :root { --ink:#0f172a; --muted:#475569; --link:#0ea5e9; --bg:#ffffff; --card:#f8fafc; --line:#e2e8f0; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: var(--bg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif; line-height: 1.6; }
+
+      a { color: var(--link); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* Top nav */
+      nav { border-bottom: 1px solid var(--line); background:#fff; position: sticky; top: 0; z-index: 10; }
+      .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+      .brand { font-weight: 800; color: var(--ink); }
+      .nav-list { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+      .nav-list a { color: var(--muted); font-weight: 600; }
+      .nav-list a:hover { color: var(--link); }
+
+      /* Page layout */
+      .container { max-width: 1000px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+      .blurb { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.25rem; }
+      h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
       p { margin: 0.5rem 0 1rem; color: var(--muted); }
-      .pubs { margin: 0; padding-left: 1.25rem; }
-      .pubs li { margin: 0 0 0.75rem; }
-      .pub-meta { display:block; font-size: 0.95rem; color: var(--muted); }
-      .cta-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; }
-      .button {
-        display: inline-block; padding: 0.5rem 0.8rem; border-radius: 10px; border: 1px solid #e2e8f0;
-        background: #fff; color: var(--ink); text-decoration: none; font-weight: 600;
+
+      /* About section as two-column grid: text | images  */
+      .about-grid { display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 1rem; align-items: start; }
+      .about-gallery { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+      .about-gallery img {
+        width: 100%; height: auto;
+        aspect-ratio: 4 / 3; object-fit: cover;
+        border-radius: 12px; border: 1px solid var(--line);
       }
-      .button:hover { border-color: #cbd5e1; }
-      footer { border-top: 1px solid #e2e8f0; margin-top: 2rem; }
-      footer .inner { max-width: 960px; margin: 0 auto; padding: 1rem; color: var(--muted); font-size: 0.95rem; }
-      /* Small screens */
-      @media (max-width: 600px) { .pubs { padding-left: 1rem; } }
+      /* keep images visible while scrolling on large screens */
+      @media (min-width: 900px) { .about-gallery { position: sticky; top: 5.5rem; } }
+      /* stack on small screens */
+      @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+
+      /* Publications list + figure support */
+      .pubs { margin: 0; padding-left: 1.25rem; }
+      .pubs li { margin: 0 0 1rem; }
+      .pub-meta { display:block; font-size: 0.95rem; color: var(--muted); }
+
+      .pub-item { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+      .pub-item.with-fig { grid-template-columns: 1fr 260px; align-items: start; }
+      .pub-figure { margin: 0; }
+      .pub-figure img {
+        width: 100%; height: auto;
+        aspect-ratio: 4 / 3; object-fit: cover;
+        border-radius: 12px; border: 1px solid var(--line);
+      }
+      .pub-figure figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.35rem; }
+      @media (max-width: 760px) { .pub-item.with-fig { grid-template-columns: 1fr; } }
+
+      .cta-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; }
+      .button { display: inline-block; padding: 0.55rem 0.9rem; border: 1px solid var(--line); border-radius: 10px; background:#fff; color: var(--ink); font-weight: 600; }
+      .button:hover { border-color: #cbd5e1; text-decoration: none; }
+
+      footer { border-top: 1px solid var(--line); }
+      .foot-inner { max-width: 1000px; margin: 0 auto; padding: 1rem; color: var(--muted); font-size: 0.95rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     </style>
   </head>
   <body>
     <nav aria-label="Primary">
-      <div class="inner">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
+      <div class="nav-inner">
+        <a class="brand" href="/">Ankita Paul</a>
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/Research">Research</a></li>
+          <li><a href="/OOO">OOO</a></li>
+        </ul>
       </div>
     </nav>
 
-    <div class="container">
+    <main class="container">
+      <!-- Research Areas -->
       <section id="about" class="blurb" aria-labelledby="about-title">
         <h1 id="about-title">Research Areas</h1>
-        <p>
-          If you've made it here, let's talk a bit about what I do. I work on brain-inspired artificial intelligence,
-          sequential learning, and deep learning algorithm development. Application areas include, but are not limited to,
-          image classification, signal processing, speech recognition, disease prediction and screening, mutation calling,
-          and other healthcare applications.
-        </p>
-        <p>
-          Full publication list available on
-          <a href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">DBLP</a>.
-        </p>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I work on brain-inspired artificial intelligence, sequential learning, and deep learning algorithm
+              development. Application areas include image classification, signal processing, speech recognition,
+              disease prediction and screening, mutation calling, and other healthcare applications.
+            </p>
+            <p>
+              Full publication list available on
+              <a href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">DBLP</a>.
+            </p>
+            <div class="cta-row" role="group" aria-label="Research links">
+              <a class="button" href="https://scholar.google.com/citations?hl=en&user=hFLSbBIAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a>
+              <a class="button" href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">DBLP</a>
+            </div>
+          </div>
+          <aside class="about-gallery" aria-label="Highlights">
+            <!-- Replace with your actual files (recommended size ~1200px wide) -->
+            <img src="/media/research-1.jpg" alt="Wearable monitoring system for neonatal respiration" loading="lazy" width="1200" height="900" />
+            <img src="/media/research-2.jpg" alt="DNABERT mutation classification pipeline schematic" loading="lazy" width="1200" height="900" />
+            <img src="/media/research-3.jpg" alt="Glioblastoma survival prediction with imaging features" loading="lazy" width="1200" height="900" />
+          </aside>
+        </div>
       </section>
 
+      <!-- Publications -->
       <section id="publications" class="blurb" aria-labelledby="pubs-title" style="margin-top: 1rem;">
         <h2 id="pubs-title">Recent Selected Publications</h2>
-        <!-- Tip: Keep ~5–8 “selected” items here; link out to DBLP/Google Scholar for the full list. -->
         <ol class="pubs">
-          <!-- Replace the placeholders below with your real entries. Use bold for your name. -->
-          <li>
-            <strong>Paul, A.</strong>, … “Weighted Hypoxemia Index: An adaptable method for quantifying hypoxemia severity.” <em>PlosOne/</em>, 2025.
-            <span class="pub-meta">Keywords: Computational Method, healthcare AI, biomarker </span>
+          <!-- Example with a figure shown on the right -->
+          <li class="pub-item with-fig">
+            <div>
+              <strong>Paul, A.</strong>, … “Weighted Hypoxemia Index: An adaptable method for quantifying hypoxemia severity.”
+              <em>PLOS ONE</em>, 2025.
+              <span class="pub-meta">Keywords: computational method, healthcare AI, biomarker</span>
+              <!-- Optional: add DOI/PDF buttons -->
+              <div class="cta-row">
+                <a class="button" href="https://doi.org/XX.XXXX/whi-paper" target="_blank" rel="noopener">DOI</a>
+                <a class="button" href="https://journal-site.example/whi.pdf" target="_blank" rel="noopener">PDF</a>
+              </div>
+            </div>
+            <figure class="pub-figure">
+              <a href="https://doi.org/XX.XXXX/whi-paper" target="_blank" rel="noopener">
+                <img src="/media/papers/whi-fig2.jpg"
+                     alt="Figure: Overview of the Weighted Hypoxemia Index pipeline"
+                     loading="lazy" width="1000" height="750" />
+              </a>
+              <figcaption>
+                Figure from the paper. <!-- If OA: © Authors, CC BY 4.0 -->
+              </figcaption>
+            </figure>
           </li>
+
+          <!-- Standard items without figures -->
           <li>
-            <strong>Paul, A.</strong>, … “Learning in recurrent spiking neural networks with sparse full-FORCE training.” <em>/ICANN</em>, 2024.
+            <strong>Paul, A.</strong>, … “Learning in recurrent spiking neural networks with sparse full-FORCE training.”
+            <em>ICANN</em>, 2024.
             <span class="pub-meta">Keywords: brain-inspired AI, sequential learning</span>
           </li>
           <li>
-            <strong>Paul, A.</strong>, … “Data Driven Learning of Aperiodic Nonlinear Dynamic Systems Using Spike Based Reservoirs-in-Reservoir.” <em>/IJCNN</em>, 2024.
+            <strong>Paul, A.</strong>, … “Data-Driven Learning of Aperiodic Nonlinear Dynamic Systems Using Spike-Based Reservoirs-in-Reservoir.”
+            <em>IJCNN</em>, 2024.
             <span class="pub-meta">Keywords: reservoir computing, neural networks</span>
           </li>
           <li>
-            <strong>Paul, A.</strong>, … “Sparsity aware learning in feedback-driven differential recurrent neural networks.” <em>ICANN</em>, 2024.
+            <strong>Paul, A.</strong>, … “Sparsity-aware learning in feedback-driven differential recurrent neural networks.”
+            <em>ICANN</em>, 2024.
             <span class="pub-meta">Keywords: neuromorphic system learning, RNNs, machine learning</span>
           </li>
         </ol>
 
+        <!-- Links -->
         <div class="cta-row" role="group" aria-label="Publication links">
           <a class="button" href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">View all on DBLP</a>
-          <a class="button" href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=hFLSbBIAAAAJ&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a>
-          <!-- Optional: add ORCID if you have one -->
-          <!-- <a class="button" href="https://orcid.org/0000-0001-7687-3287" target="_blank" rel="noopener">ORCID</a> -->
+          <a class="button" href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=hFLSbBIAAAAJ&sortby=pubdate" target="_blank" rel="noopener">Google Scholar</a>
+          <!-- <a class="button" href="https://orcid.org/0000-0001-XXXX-XXXX" target="_blank" rel="noopener">ORCID</a> -->
         </div>
 
-      
-    </div>
+        <!-- Optional: collapsible preprints -->
+        <h3 style="margin-top:1rem;">Preprints & Under Review</h3>
+        <details>
+          <summary style="cursor:pointer; font-weight:600;">Show list</summary>
+          <ol class="pubs" style="margin-top:0.5rem;">
+            <li>
+              <strong>Paul, A.</strong>, … “Title of Preprint.” <em>bioRxiv/arXiv</em>, 2025.
+              <span class="pub-meta"><a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">Abstract</a> · <a href="https://arxiv.org/pdf/XXXX.XXXXX" target="_blank" rel="noopener">PDF</a></span>
+            </li>
+          </ol>
+        </details>
+      </section>
+    </main>
 
     <footer>
-      <div class="inner">
-        © <span id="year"></span> Ankita Paul · <a href="#about">Back to top</a>
+      <div class="foot-inner">
+        <div>© <span id="year"></span> Ankita Paul</div>
+        <div><a href="#about">Back to top</a></div>
       </div>
     </footer>
 
     <script>
-      // Tiny enhancement: keep the footer year current.
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
