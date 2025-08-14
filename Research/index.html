@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Research Interests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <style>
+      /* Optional light styling in case /css/main.css is minimal */
+      :root {
+        --ink: #0f172a;
+        --muted: #475569;
+        --link: #0ea5e9;
+        --bg: #ffffff;
+        --card: #f8fafc;
+      }
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; color: var(--ink); background: var(--bg); line-height: 1.6; margin: 0; }
+      nav { border-bottom: 1px solid #e2e8f0; background: #fff; position: sticky; top: 0; z-index: 10; }
+      nav .inner { max-width: 960px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+      nav a { text-decoration: none; color: var(--muted); font-weight: 600; }
+      nav a:hover { color: var(--link); }
+      .container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+      .blurb { background: var(--card); border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.25rem; }
+      h1, h2 { line-height: 1.2; margin: 0.2rem 0 0.75rem; }
+      p { margin: 0.5rem 0 1rem; color: var(--muted); }
+      .pubs { margin: 0; padding-left: 1.25rem; }
+      .pubs li { margin: 0 0 0.75rem; }
+      .pub-meta { display:block; font-size: 0.95rem; color: var(--muted); }
+      .cta-row { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; }
+      .button {
+        display: inline-block; padding: 0.5rem 0.8rem; border-radius: 10px; border: 1px solid #e2e8f0;
+        background: #fff; color: var(--ink); text-decoration: none; font-weight: 600;
+      }
+      .button:hover { border-color: #cbd5e1; }
+      footer { border-top: 1px solid #e2e8f0; margin-top: 2rem; }
+      footer .inner { max-width: 960px; margin: 0 auto; padding: 1rem; color: var(--muted); font-size: 0.95rem; }
+      /* Small screens */
+      @media (max-width: 600px) { .pubs { padding-left: 1rem; } }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Primary">
+      <div class="inner">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <section id="about" class="blurb" aria-labelledby="about-title">
+        <h1 id="about-title">Research Areas</h1>
+        <p>
+          If you've made it here, let's talk a bit about what I do. I work on brain-inspired artificial intelligence,
+          sequential learning, and deep learning algorithm development. Application areas include, but are not limited to,
+          image classification, signal processing, speech recognition, disease prediction and screening, mutation calling,
+          and other healthcare applications.
+        </p>
+        <p>
+          Full publication list available on
+          <a href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">DBLP</a>.
+        </p>
+      </section>
+
+      <section id="publications" class="blurb" aria-labelledby="pubs-title" style="margin-top: 1rem;">
+        <h2 id="pubs-title">Selected Publications</h2>
+        <!-- Tip: Keep ~5–8 “selected” items here; link out to DBLP/Google Scholar for the full list. -->
+        <ol class="pubs">
+          <!-- Replace the placeholders below with your real entries. Use bold for your name. -->
+          <li>
+            <strong>Paul, A.</strong>, … “Title of Paper 1.” <em>Journal/Conference</em>, Year.
+            <span class="pub-meta">Keywords: deep learning, healthcare AI, mutation calling</span>
+          </li>
+          <li>
+            <strong>Paul, A.</strong>, … “Title of Paper 2.” <em>Journal/Conference</em>, Year.
+            <span class="pub-meta">Keywords: brain-inspired AI, sequential learning</span>
+          </li>
+          <li>
+            <strong>Paul, A.</strong>, … “Title of Paper 3.” <em>Journal/Conference</em>, Year.
+            <span class="pub-meta">Keywords: survival prediction, medical imaging</span>
+          </li>
+          <li>
+            <strong>Paul, A.</strong>, … “Title of Paper 4.” <em>Journal/Conference</em>, Year.
+            <span class="pub-meta">Keywords: wearable sensing, neonatal care</span>
+          </li>
+        </ol>
+
+        <div class="cta-row" role="group" aria-label="Publication links">
+          <a class="button" href="https://dblp.org/pid/292/9088.html" target="_blank" rel="noopener">View all on DBLP</a>
+          <a class="button" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <!-- Optional: add ORCID if you have one -->
+          <!-- <a class="button" href="https://orcid.org/XXXX-XXXX-XXXX-XXXX" target="_blank" rel="noopener">ORCID</a> -->
+        </div>
+
+        <!-- Optional “Under Review / Preprints” subsection -->
+        <h3 style="margin-top: 1rem;">Preprints & Under Review</h3>
+        <ol class="pubs">
+          <li>
+            <strong>Paul, A.</strong>, … “Title of Preprint.” <em>bioRxiv/arXiv</em>, Year. <a href="#" target="_blank" rel="noopener">PDF</a>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <footer>
+      <div class="inner">
+        © <span id="year"></span> Ankita Paul · <a href="#about">Back to top</a>
+      </div>
+    </footer>
+
+    <script>
+      // Tiny enhancement: keep the footer year current.
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
