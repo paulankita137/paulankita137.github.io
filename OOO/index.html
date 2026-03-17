@@ -1,32 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Out of Office | Ankita Paul</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <style>
+        :root {
+            --primary: #2563eb;
+            --ink: #0f172a;
+            --muted: #475569;
+            --bg: #fcfcfd;
+            --line: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
 
-<html>
-	<head>
-		<title>Out of Office </title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		        <h1>Out of Office</h1>
-				<p>You'll find me at concerts,
+        body { 
+            margin: 0; 
+            font-family: "Inter", system-ui, sans-serif; 
+            color: var(--ink); 
+            background: var(--bg); 
+            line-height: 1.6;
+        }
 
-                                   <br>You'll spot me at cafes drinking oat milk latte,
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem; }
+        
+        header { margin-bottom: 4rem; text-align: center; }
+        h1 { font-size: 3rem; letter-spacing: -0.04em; margin-bottom: 1rem; }
+        .subtitle { color: var(--muted); font-size: 1.2rem; font-style: italic; }
 
-           <br>You'll hear me hum Radiohead way too often,
+        /* Hobby Sections with Photos */
+        .section-row { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 3rem; 
+            align-items: center; 
+            margin-bottom: 6rem;
+        }
 
-           <br>You'll also most likely find me at a local Barnes and Noble from time to time,
+        .text-content h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--ink); }
+        .text-content p { font-size: 1.1rem; color: var(--muted); }
 
-           <br>When not Napping.
-<!DOCTYPE html><p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		
-		</footer>
-                		
-		
-	</body>
+        .image-group { display: flex; gap: 1rem; justify-content: center; }
+        .image-group img { 
+            width: 45%; 
+            aspect-ratio: 1; 
+            object-fit: cover; 
+            border-radius: 24px; 
+            box-shadow: var(--shadow);
+            border: 4px solid white;
+        }
+
+        /* Music Section - Text Only & Cool */
+        .music-wrapper {
+            background: var(--ink);
+            color: white;
+            padding: 5rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        .music-wrapper h2 { color: #fff; font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .music-quote { 
+            font-size: 1.5rem; 
+            font-weight: 300; 
+            color: #94a3b8; 
+            max-width: 700px; 
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+        .music-details { margin-top: 2rem; color: var(--primary); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; }
+
+        @media (min-width: 768px) {
+            .section-row { grid-template-columns: 1fr 1fr; }
+            .section-row.reverse { direction: rtl; }
+            .section-row.reverse .text-content { direction: ltr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Out of Office</h1>
+            <p class="subtitle">Finding balance between the lab and the world.</p>
+        </header>
+
+        <section class="section-row">
+            <div class="text-content">
+                <h2>🏔️ Hiking</h2>
+                <p>When the models are training, I’m usually off-grid. Hiking is my primary way to reset—there’s something rewarding about the iterative progress of a long ascent.</p>
+            </div>
+            <div class="image-group">
+                <img src="/media/hiking1.jpg" alt="Hiking">
+                <img src="/media/hiking2.jpg" alt="Nature view">
+            </div>
+        </section>
+
+        <section class="section-row reverse">
+            <div class="text-content">
+                <h2>🍳 Cooking</h2>
+                <p>The kitchen is just another laboratory. I enjoy experimenting with spices and techniques—though the error bars in cooking are much more delicious.</p>
+            </div>
+            <div class="image-group">
+                <img src="/media/cooking1.jpg" alt="Cooking experiments">
+                <img src="/media/cooking2.jpg" alt="The final result">
+            </div>
+        </section>
+
+        <section class="section-row">
+            <div class="text-content">
+                <h2>⚽ Soccer</h2>
+                <p>Strategy, speed, and teamwork. Whether I'm playing a match or catching a game, it’s a perfect exercise in real-time spatial optimization.</p>
+            </div>
+            <div class="image-group">
+                <img src="/media/soccer1.jpg" alt="Soccer match">
+                <img src="/media/soccer2.jpg" alt="On the pitch">
+            </div>
+        </section>
+
+        <section class="music-wrapper">
+            <h2>🎧 The Soundtrack</h2>
+            <p class="music-quote">
+                "You'll spot me at cafes drinking oat milk lattes, likely humming Radiohead way too often."
+            </p>
+            <p style="color: #64748b; margin-top: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Music is the backbone of my focus. From the experimental textures of art-rock to the quiet atmosphere of a local Barnes & Noble, I find my best ideas where the rhythm is right.
+            </p>
+            <div class="music-details">Currently Playing: In Rainbows — Radiohead</div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 4rem; color: var(--muted);">
+            <p><a href="/" style="color: var(--primary); text-decoration: none;">← Back to Home</a></p>
+            <p>&copy; Ankita Paul</p>
+        </footer>
+    </div>
+
+</body>
 </html>
