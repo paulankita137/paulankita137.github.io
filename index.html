@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ankita Paul, PhD | Scientist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            /* Professional Scientific Palette */
+            --primary: #2563eb;
+            --primary-soft: #eff6ff;
+            --ink: #0f172a;
+            --muted: #475569;
+            --bg: #fcfcfd;
+            --card: #ffffff;
+            --line: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * { box-sizing: border-box; transition: all 0.2s ease; }
+        
+        body { 
+            margin: 0; 
+            color: var(--ink); 
+            background: var(--bg); 
+            font-family: "Inter", system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav { 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        }
+        .nav-inner { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 1rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        .brand { font-weight: 700; font-size: 1.2rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+        .nav-list { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+        .nav-list a { color: var(--muted); font-weight: 500; text-decoration: none; font-size: 0.95rem; }
+        .nav-list a:hover { color: var(--primary); }
+
+        /* Main Layout */
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem; }
+        
+        /* Hero Section */
+        .hero { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 2.5rem; 
+            align-items: center; 
+            margin-bottom: 3rem;
+        }
+        
+        .hero-text h1 { 
+            font-size: 2.75rem; 
+            margin: 0 0 1rem; 
+            letter-spacing: -0.04em; 
+            line-height: 1.1; 
+            color: var(--ink);
+        }
+        
+        .lead { 
+            font-size: 1.15rem; 
+            color: var(--muted); 
+            margin-bottom: 2rem; 
+            max-width: 65ch;
+        }
+        .lead em { font-style: normal; font-weight: 600; color: var(--ink); }
+        
+        /* Portrait */
+        .portrait-container { position: relative; justify-self: center; }
+        .portrait { 
+            width: 320px; 
+            height: 320px;
+            object-fit: cover;
+            border-radius: 24px; 
+            box-shadow: var(--shadow);
+            border: 4px solid #fff;
+        }
+
+        /* Buttons & CTAs */
+        .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .btn { 
+            padding: 0.75rem 1.25rem; 
+            border-radius: 12px; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center; 
+        }
+        .btn-primary { background: var(--ink); color: #fff; }
+        .btn-primary:hover { background: var(--primary); transform: translateY(-2px); }
+        .btn-secondary { background: #fff; border: 1px solid var(--line); color: var(--ink); }
+        .btn-secondary:hover { border-color: var(--primary); background: var(--primary-soft); }
+
+        /* Quick Links / Bento Grid */
+        .section-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.5rem; }
+        .link-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 1rem; 
+        }
+        .link-card { 
+            padding: 1.25rem; 
+            background: var(--card); 
+            border: 1px solid var(--line); 
+            border-radius: 16px; 
+            text-decoration: none; 
+            color: var(--ink); 
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .link-card:hover { border-color: var(--primary); box-shadow: var(--shadow); transform: translateY(-3px); }
+        .link-card::after { content: "→"; opacity: 0.3; }
+
+        footer { margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+        .foot-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+
+        @media (min-width: 850px) {
+            .hero { grid-template-columns: 1.5fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="brand" href="/">Ankita Paul, PhD</a>
+            <ul class="nav-list">
+                <li><a href="/Research">Research</a></li>
+                <li><a href="/OOO">OOO</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Bridging Deep Learning & Healthcare.</h1>
+                <p class="lead">
+                    I am an IDSO Postdoctoral Scientist at <em>MD Anderson Cancer Center</em>, working in the 
+                    <a href="https://odin.mdacc.tmc.edu/~wwang7/people.html" style="color: var(--primary)">Wang Lab</a>. 
+                    My research focuses on sequential learning and deep learning algorithms for disease prediction, 
+                    screening, and mutation calling.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="/Research">View My Research</a>
+                    <a class="btn btn-secondary" href="https://scholar.google.com/citations?user=hFLSbBIAAAAJ" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+
+            <div class="portrait-container">
+                <img class="portrait" src="/media/IMG_5452.jpg" alt="Ankita Paul" />
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Connect & Resources</h2>
+            <div class="link-grid">
+                <a class="link-card" href="mailto:your.email@mdanderson.org">Email</a>
+                <a class="link-card" href="https://github.com/paulankita137" target="_blank">GitHub</a>
+                <a class="link-card" href="https://www.linkedin.com/in/ankita-paul-phd-3b3b17a3/" target="_blank">LinkedIn</a>
+                <a class="link-card" href="https://dblp.org/pid/292/9088.html" target="_blank">DBLP</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="foot-inner">
+            <span>© <span id="year"></span> Ankita Paul</span>
+            <span>Built with precision & care</span>
+        </div>
+    </footer>
+
+    <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
