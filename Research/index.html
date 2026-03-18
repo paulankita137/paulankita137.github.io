@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Research – Ankita Paul</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { 
+        --ink: #1e293b; 
+        --muted: #64748b; 
+        --accent: #4f46e5; /* Sophisticated Indigo */
+        --bg: #ffffff; 
+        --card: #f8fafc; 
+        --line: #f1f5f9; 
+      }
+
+      * { box-sizing: border-box; }
+      
+      body { 
+        margin: 0; 
+        color: var(--ink); 
+        background: var(--bg);
+        font-family: "Inter", system-ui, -apple-system, sans-serif; 
+        line-height: 1.7; 
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3 { 
+        font-family: "Georgia", serif; /* Classy serif touch */
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 1rem;
+      }
+
+      a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+      a:hover { color: #3730a3; }
+
+      /* Top nav */
+      nav { border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10; }
+      .nav-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+      .brand { font-family: "Georgia", serif; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+      .nav-list { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+      .nav-list a { color: var(--muted); font-size: 0.95rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+      .nav-list a:hover { color: var(--accent); }
+
+      /* Container */
+      .container { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+      
+      .intro-text { font-size: 1.15rem; max-width: 700px; margin-bottom: 3rem; }
+
+      /* Unified research section */
+      .research-grid { display: grid; gap: 4rem; grid-template-columns: 1.4fr 0.8fr; align-items: start; }
+      @media (max-width: 850px){ .research-grid { grid-template-columns: 1fr; } }
+
+      /* Publications list */
+      .pubs { list-style: none; padding: 0; }
+      .pub-item { 
+        margin-bottom: 2.5rem; 
+        padding-bottom: 1.5rem; 
+        border-bottom: 1px solid var(--line); 
+      }
+      .pub-title { font-weight: 600; font-size: 1.1rem; display: block; line-height: 1.4; margin-bottom: 0.3rem; color: #0f172a; }
+      .pub-meta { font-size: 0.9rem; color: var(--muted); display: block; margin-bottom: 0.8rem; }
+      .pub-tags { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 700; margin-top: 0.5rem; display: block;}
+
+      /* Buttons */
+      .cta-row { display: flex; gap: 0.75rem; margin-top: 1rem; }
+      .button { 
+        font-size: 0.85rem; padding: 0.4rem 1rem; border: 1px solid #e2e8f0; 
+        border-radius: 6px; background: transparent; color: var(--muted); 
+        font-weight: 500; transition: all 0.2s; 
+      }
+      .button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+      /* Gallery */
+      .about-gallery { display: grid; gap: 1.5rem; }
+      @media (min-width: 900px){ .about-gallery { position: sticky; top: 7rem; } }
+
+      figure.overlay {
+        position: relative; overflow: hidden; border-radius: 8px; margin: 0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      }
+      figure.overlay img { display: block; width: 100%; height: auto; object-fit: cover; transition: transform 0.5s ease; }
+      figure.overlay:hover img { transform: scale(1.03); }
+      
+      figure.overlay figcaption {
+        position: absolute; inset: 0; padding: 1.5rem;
+        display: flex; align-items: flex-end;
+        background: linear-gradient(to top, rgba(15,23,42,0.9), transparent);
+        color: #fff; opacity: 0; transition: opacity 0.3s ease;
+        font-size: 0.85rem; font-weight: 400;
+      }
+      figure.overlay:hover figcaption { opacity: 1; }
+
+      footer { margin-top: 5rem; border-top: 1px solid var(--line); padding: 2rem 0; color: var(--muted); font-size: 0.9rem; }
+      .foot-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; }
+    </style>
+  </head>
+  <body>
+
+    <nav aria-label="Primary">
+      <div class="nav-inner">
+        <a class="brand" href="/">Ankita Paul</a>
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/Research">Research</a></li>
+          <li><a href="/OOO">OOO</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <header class="intro-text">
+        <h1>Research</h1>
+        <p>
+          I specialize in <strong>brain-inspired artificial intelligence</strong>, sequential learning, and deep learning algorithm development. 
+          My work spans healthcare applications, from signal processing to disease screening and mutation calling.
+        </p>
+        <div style="font-size: 0.95rem;">
+          <a href="https://dblp.org/pid/292/9088.html" target="_blank">DBLP Archive</a> &nbsp;•&nbsp; 
+          <a href="https://github.com/paulankita137" target="_blank">Software on GitHub</a>
+        </div>
+      </header>
+
+      <div class="research-grid">
+        <section class="left">
+          <h2>Selected Publications</h2>
+          <div class="pubs">
+            
+            <article class="pub-item">
+              <span class="pub-title">“Weighted Hypoxemia Index: An adaptable method for quantifying hypoxemia severity.”</span>
+              <span class="pub-meta">Ankita Paul, et al. — <em>PLOS ONE</em>, 2025</span>
+              <span class="pub-tags">Healthcare AI • Biomarkers</span>
+              <div class="cta-row">
+                <a class="button" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0328214" target="_blank">View Publication</a>
+              </div>
+            </article>
+
+            <article class="pub-item">
+              <span class="pub-title">“Learning in recurrent spiking neural networks with sparse full-FORCE training.”</span>
+              <span class="pub-meta">Ankita Paul, et al. — <em>ICANN</em>, 2024</span>
+              <span class="pub-tags">Brain-inspired AI • Sequential Learning</span>
+              <div class="cta-row">
+                <a class="button" href="https://dl.acm.org/doi/10.1007/978-3-031-72359-9_27" target="_blank">View Publication</a>
+              </div>
+            </article>
+
+            <article class="pub-item">
+              <span class="pub-title">“Data-Driven Learning of Aperiodic Nonlinear Dynamic Systems Using Spike-Based Reservoirs-in-Reservoir.”</span>
+              <span class="pub-meta">Ankita Paul, et al. — <em>IJCNN</em>, 2024</span>
+              <span class="pub-tags">Reservoir Computing • Neural Networks</span>
+              <div class="cta-row">
+                <a class="button" href="https://ieeexplore.ieee.org/abstract/document/10650608" target="_blank">View Publication</a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <aside class="about-gallery">
+          <figure class="overlay">
+            <img src="/api/placeholder/400/300" alt="Samsung Research" />
+            <figcaption>Samsung Electronics Research Building, South Korea</figcaption>
+          </figure>
+          <figure class="overlay">
+            <img src="/api/placeholder/400/300" alt="ICANN Lugano" />
+            <figcaption>Presenting at ICANN, Lugano, Switzerland</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="foot-inner">
+        <div>© <span id="year"></span> Ankita Paul</div>
+        <div><a href="#top">Back to top</a></div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
